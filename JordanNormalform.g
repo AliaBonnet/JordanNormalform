@@ -237,7 +237,7 @@ PrimaryDecompositionforJNF := function(A, minpol)
             if not IsOne(Gcd(m,gs[i])) then
                 f := m;
                 pot := 0; #this used to be 1... is this ok?
-                for j in [1..n] do #n mal ist overkill, ich glaube das ganze geht bestimmt eleganter
+                for j in [1..n] do #n mal ist overkill
                     f2 := Quotient(f,gs[i]);
                     if f2 = fail then 
                         break;
@@ -378,7 +378,7 @@ FindLinearDependenceNC := function(vecs, A, d) #vecs, A, degree of p, returns co
     if rel = fail or rel = [] then #shouldn't happen
         Print("Couldn't find F[A]-linear dependence"); 
     fi;
-    rel := rel[1]; #ist egal welches wir nehmen #ist es dumm alle auszurechnen wenn ich nur eins brauche? 
+    rel := rel[1];
     #turn into usable polynomial coeffs
     qis := [];
     currdim := 1; #ja das muss so #aber kann man auch einfach arithmetisch machen
@@ -391,7 +391,7 @@ end;
 
 #Input: matrix A with minimalpolynomial p^m
 #Returns matrix B such that A^Inverse(B) is in cyclic decomposition form, dimensions of cyclic subspaces
-CyclicDecompositionOfPrimarySubspace := function (A, p, m) #now using better choice of wis works:D
+CyclicDecompositionOfPrimarySubspace := function (A, p, m) 
     local F, n, d, Ainp, ws, allspun, wspun, k, tomult, minpolpowers, dims, wtrip, i, conj, sumdim, wdim, qis, j, r, wstrich, currdim, w, vecs;
     F := DefaultFieldOfMatrix(A);
     n := NrRows(A);
